@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trello Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">KanBan Board</div>
+    <div class="content">
+      <div class="board">
+        <div class="column" id="todo">
+          <h2>To Do (<span id="todo-count">0</span>)</h2>
+          <div class="tasks" id="todo-tasks"></div>
+          <input
+            type="text"
+            class="task-input"
+            id="todo-input"
+            placeholder="Enter a task"
+          />
+          <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect
+              rx="8"
+              ry="8"
+              class="line"
+              height="100%"
+              width="100%"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <button class="add-tasks" onclick="addTask('todo')">Add Task</button>
+        </div>
+        <div class="column" id="doing">
+          <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect
+              rx="8"
+              ry="8"
+              class="line"
+              height="100%"
+              width="100%"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <h2>Doing (<span id="doing-count">0</span>)</h2>
+          <div class="tasks" id="doing-tasks"></div>
+          <input
+            type="text"
+            class="task-input"
+            id="doing-input"
+            placeholder="Enter a task"
+          />
+          <button class="add-tasks" onclick="addTask('doing')">Add Task</button>
+        </div>
+        <div class="column" id="done">
+          <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect
+              rx="8"
+              ry="8"
+              class="line"
+              height="100%"
+              width="100%"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <h2>Done (<span id="done-count">0</span>)</h2>
+          <div class="tasks" id="done-tasks"></div>
+          <input
+            type="text"
+            class="task-input"
+            id="done-input"
+            placeholder="Enter a task"
+          />
+          <button class="add-tasks" onclick="addTask('done')">Add Task</button>
+        </div>
+      </div>
+      <div class="context-menu">
+        <ul>
+          <li onclick="editTask()">Edit</li>
+          <li onclick="deleteTask()">Delete</li>
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
